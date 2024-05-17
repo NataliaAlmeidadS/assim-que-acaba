@@ -20,48 +20,26 @@ body {
   width: 80%;
   margin: auto;
 }
-
+/* 
 .header {
-  grid-area: header;
-  background: #ff99ffe7;
-  
-  backdrop-filter: blur(19.5px);
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr auto;
+  height: var(--tamanho-header);
+  border-bottom: 2px solid #32b9cd;
+}
+
+.header .container {
+  justify-content: space-between;
   align-items: center;
+  height: 100%;
 }
 
-
-.header nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: 5vh;
+.header a {
+  text-decoration: none;
+  color: #e3b062;
 }
 
-.header nav a {
-  display: block;
-  padding: 10px;
-  color: white;
-  font-size: 1.125em;
-  background: rgb(0, 0, 0, .1);
-  border-radius: 5px;
-  transition: 0.1s;
-
-
+.agora {
+  font-weight: 800;
 }
-
-.header nav a:hover {
-  background: rgb(0, 0, 0, .5);
-  transition: 0.1s;
-}
-
-.header li+li {
-  margin-left: 30px;
-}
-
-
-
 
 .navbar {
   width: 300px;
@@ -70,10 +48,10 @@ body {
   justify-content: space-between;
   list-style: none;
   color: #e3b062;
-}
+} */
 
 .titulo {
-  color: #d114ae;
+  color: #32b9cd;
   width: fit-content;
   font-weight: 500;
 }
@@ -87,7 +65,7 @@ body {
 .banner {
   height: var(--tamanho-banner);
   color: white;
-  background-color: #d114ae;
+  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
   background-size: cover;
 }
 
@@ -140,31 +118,14 @@ body {
   align-items: center;
 }
 
-/* FOOTER */
 
-.footer {
-  background-color: #32b9cd;
-  height: 150px;
-  color: #fff;
-  display: flex;
-  font-size: 15px;
-}
-
-.footer .container {
-  justify-content: center;
-  text-align: center;
-}
-
-.footer .container .version {
-  font-size: 12px;
-}
 
 /* LOGIN */
 
 .login {
   height: var(--tamanho-login);
-  background-color: #f3f1f3;
-  
+  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-size: cover;
 }
 
 .login .container {
@@ -181,7 +142,6 @@ body {
   align-items: center;
   justify-content: space-evenly;
   color: palevioletred;
-  box-shadow: 5px 5px 15px 0px rgba(221, 5, 203, 0.589);
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;

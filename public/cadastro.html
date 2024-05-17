@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Cadastro</title>
+  <title>AquaTech | Cadastro</title>
 
   <script src="./js/sessao.js"></script>
 
@@ -15,18 +15,28 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body>
-  <!--header inicio-->
-  <header class="header">
-    <a href="#" class="logo"><img class="logo" src="Img/letra-n (1).png"> </a>
-    <nav>
-        <ul>
-            <li><a href="#">Sobre Livro</a></li>
-            <li><a href="#">Sobre Autora</a></li>
-            <li><a href="#">Sobre mim </a></li>
-        </ul>
-    </nav>
-</header>
+<!-- <body>
+  header inicio-->
+  <!-- <div class="header">
+    <div class="container">
+      <h1 class="titulo">AquaTech</h1>
+      <ul class="navbar">
+        <li>
+          <a href="index.html">Inicial</a>
+        </li>
+        <li>
+          <a href="simulador.html">Simulador</a>
+        </li>
+        <li>|</li>
+        <li>
+          <a href="login.html">Login</a>
+        </li>
+        <li class="agora">
+          <a href="#">Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div> -->
   <!--header fim-->
 
   <div class="login">
@@ -37,20 +47,20 @@
     </div>
     <div class="container">
       <div class="card card-cadastro">
-        <h2>Cadastro</h2>
+        <h2>Bem-vindo!</h2>
         <div class="formulario">
           <!--
                          Para inserir mais um campo, copie uma das inputs abaixo.
                          Assim que inserir vá para o script abaixo.
                      -->
-          
+         
           <div class="campo">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
           </div>
           <div class="campo">
             <span>Telefone:</span>
-            <input id="telefone_input" type="tel" placeholder="11 00000-0000" />
+            <input id="telefone_input" type="text" placeholder="11 999999999" />
           </div>
           <div class="campo">
             <span>E-mail:</span>
@@ -61,19 +71,28 @@
             <input id="senha_input" type="password" placeholder="******" />
           </div>
           <div class="campo">
-            <span> Confirmar senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
+            <span>Confirmação da Senha:</span>
+            <input id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
           <button class="botao" onclick="cadastrar()">Cadastrar</button>
         </div>
-        
+        <div id="div_aguardar" class="loading-div">
+          <img src="./assets/circle-loading.gif" id="loading-gif" />
+        </div>
 
         <div id="div_erros_login"></div>
       </div>
     </div>
   </div>
 
-
+  <!--footer inicio-->
+  <div class="footer">
+    <div class="container">
+      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
+      <span class="version">v1.0.0</span>
+    </div>
+  </div>
+  <!--footer fim-->
 </body>
 
 </html>
@@ -85,15 +104,18 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
-    var telefone = telefone_input.value;
+    var telefoneVar = telefone_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+   
     if (
       nomeVar == "" ||
-      telefone == "" ||
+      telefoneVar == "" ||
       emailVar == "" ||
-      senhaVar == "" 
-
+      senhaVar == "" ||
+      confirmacaoSenhaVar == "" 
+     
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -115,9 +137,10 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
-        telefoneServer: telefone,
+        telefoneServer: telefoneVar,
         emailServer: emailVar,
         senhaServer: senhaVar
+       
       }),
     })
       .then(function (resposta) {
@@ -149,7 +172,6 @@
 
   function listar() {
     fetch("/empresas/listar", {
-      
       method: "GET",
     })
       .then(function (resposta) {

@@ -5,14 +5,13 @@
 /*
 comandos para mysql server
 */
+create database projeto;
 
-CREATE DATABASE projetoInd;
-
-USE projetoind;
+use projeto;
 
 create table usuario(
 id int primary key auto_increment,
-nome_completo varchar (50),
+nome varchar (50),
 telefone char (11),
 email varchar (50),
 senha varchar (50)
