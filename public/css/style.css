@@ -20,13 +20,13 @@ a {
     text-decoration: none;
 }
 
-.lateral {
+.lateral{
     display: block;
     border: 5px;
     padding: 3px;
     color: white;
     margin-top: 40px;
-    margin-left: 20px;
+    margin-left: 10px;
     max-width: 100px;
     /* margin: 0 auto 30px auto; */
     border-radius: 5px;
@@ -51,7 +51,7 @@ a {
     grid-template-columns: minmax(160px, 1fr) 3fr 300px;
     grid-template-areas:
         "header header header"
-        "sidnave sidnave sidnave"
+        "sidenav sidenav sidenav"
         "footer footer footer";
 }
 
@@ -97,15 +97,14 @@ a {
     margin-left: 30px;
 }
 
-.sidenav {
-    grid-area: sidenave;
-    background: #fafbfc;
+.sidenav{
     padding: 30px;
-    z-index: -1;
+    
     position: fixed;
 }
 
-/* .sidnav img{
+
+/* .link {
     display: block;
     min-width: 10px;
     max-width: 100px;
@@ -114,11 +113,9 @@ a {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15); 
-}*/
+} */
 
-.sidnav li a:hover {
-    background: #b07dfb;
-}
+
 
 
 .content {
