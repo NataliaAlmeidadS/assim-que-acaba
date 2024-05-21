@@ -14,7 +14,7 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 5px;
-  background: linear-gradient(90deg, rgba(91,30,159,1) 0%, rgba(77,39,182,1) 100%);
+  background-color: white;
 }
 
 body h2 {
@@ -22,7 +22,7 @@ body h2 {
 }
 
 main {
-  background-color: white;
+  box-shadow: 0px 0px 25px 10px rgba(211, 13, 194, 0.589);
   padding: 10px;
   border-radius: 10px;
   width: 100%;
@@ -57,7 +57,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #008CCC;
+  background-color: #e469d6;
   color: white;
 }
 

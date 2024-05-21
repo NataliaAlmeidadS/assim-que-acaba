@@ -102,6 +102,7 @@
         "(Mensagem de erro para todos os campos em branco)";
 
       finalizarAguardar();
+      validarSessao();
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
@@ -183,7 +184,7 @@
 
 <script>
   function cadastrar() {
-    aguardar();
+    // aguardar();
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
