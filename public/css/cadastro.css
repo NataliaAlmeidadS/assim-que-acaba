@@ -19,7 +19,7 @@ body{
     background-color: #fff;
     border-radius: 15px;
     width: 85% ;
-    height: 58%;
+    height: 60%;
     box-shadow: 5px 5px 15px 0px rgba(211, 13, 194, 0.589);
     justify-content: space-between;
     align-items: center;
@@ -126,19 +126,21 @@ display: flex;
 .form{
     display: flex;
     flex-direction: column;
-    width: 55%;
+    width: 50%;
 }
 .form input{
-    height: 45px;
+    height: 40px;
     width: 81%;
     border: none;
     background-color: #ecf0f1 ;
     margin: 8px ;
+    text-align: center;
 }
 .label.input{
     background-color: #ecf0f1;
     display: flex;
     align-items: center;
+
 }
 .second-content{
     position: absolute;
