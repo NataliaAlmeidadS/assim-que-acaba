@@ -7,12 +7,16 @@
 body{
      font-family: 'Open Sans', sans-serif;
 }
+.header{
+    background: #cc80c8;
+}
 
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
     background-color: #ecf0f1;
 }
 .content{
@@ -25,6 +29,8 @@ body{
     justify-content: space-between;
     align-items: center;
     position: relative;
+    margin-bottom: 85px;
+
 }
 .content::before{
     content: "";
