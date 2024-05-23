@@ -37,6 +37,22 @@ function finish() {
   textFinish.innerHTML = `você acertou ${questionsCorrect} de ${questions.length}`;
   content.style.display = "none";
   contentFinish.style.display = "flex";
+
+  fetch("/respostas/cadastrar", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      // crie um atributo que recebe o valor recuperado aqui
+      // Agora vá para o arquivo routes/usuario.js
+      acertosServer: questionsCorrect,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+    })
+
 }
 
 function loadQuestion() {
@@ -63,3 +79,4 @@ function loadQuestion() {
 }
 
 loadQuestion();
+

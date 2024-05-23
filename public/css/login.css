@@ -95,7 +95,7 @@ body{
  background-color: transparent;
  border: 1px solid #fff;
  background-color: #dd67ec;
- margin-left: 144px;
+ margin-left: 75px;
  height: 46px;
  width: 183px;
 }
@@ -122,7 +122,7 @@ display: flex;
 }
 .first-column{
     text-align: center;
-    width: 284px;
+    width:216px;
     color: #dd30ec;;
     flex: 1 0 auto;
     z-index: 1;
