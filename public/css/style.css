@@ -29,9 +29,9 @@ a {
     border: 5px;
     padding: 3px;
     color: white;
-    margin-top: 40px;
+    margin-top: 70px;
     margin-left: 10px;
-    max-width: 85px;
+    max-width: 90px;
     /* margin: 0 auto 30px auto; */
     border-radius: 5px;
     box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
@@ -129,7 +129,7 @@ a {
     display: flex;
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
-    margin-left: 200px;
+    margin-left: 25vw;
     flex-direction: column;
 }
 
@@ -195,7 +195,7 @@ p {
 
     font-size: 3em;
     line-height: 1;
-    margin: 10px 10px;
+    margin: 10px 4px;
 
 }
 

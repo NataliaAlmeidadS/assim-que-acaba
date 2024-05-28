@@ -33,6 +33,22 @@ function cadastrar(req, res) {
     }
 }
 
+function pegarDados(req, res) {
+    metricasModel.receber().then(resultado => {
+        res.json(resultado)
+    }).catch(
+        function (erro) {
+            console.log(erro);
+            console.log(
+                "\nHouve um erro ao realizar o armazenamento das metricas! Erro: ",
+                erro.sqlMessage
+            );
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
 module.exports = {
-    cadastrar
+    cadastrar,
+    pegarDados
 }

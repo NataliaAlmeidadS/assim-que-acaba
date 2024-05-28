@@ -8,6 +8,8 @@ router.post("/cadastrarMetrica", function (req, res) {
     metricasController.cadastrar(req, res);
 })
 
-
+router.get("/buscarMetrica", function (req, res) {
+    metricasController.pegarDados(req, res);
+})
 
 module.exports = router;
