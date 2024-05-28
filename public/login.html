@@ -82,13 +82,13 @@
 
                 resposta.json().then(json => {
                     console.log("chegou aqui", JSON.stringify(json[0].id));
-                    const usuarioId = JSON.stringify(json[0].id);
+                  
                     const nome = JSON.stringify(json[0].nome);
                     const email = JSON.stringify(json[0].email);
-
+                    
                     sessionStorage.EMAIL_USUARIO = email;
                     sessionStorage.NOME_USUARIO = nome;
-                    sessionStorage.ID_USUARIO = usuarioId;
+                    sessionStorage.ID_USUARIO = json[0].idusuario;
 
                     setTimeout(function () {
                         window.location = "index_2.html";

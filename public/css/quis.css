@@ -19,16 +19,17 @@ body {
 
 body h2 {
   color: white;
+  font-size: 40px;
 }
 .header{
   width: 100%;
   height: 10vh;
   top: 0;
   position: fixed;
-  background: #cc80c8;
+  background: transparent;
 }
 .logo {
-  max-width: 200px;
+  max-width: 300px;
 }
 
 main {
