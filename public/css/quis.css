@@ -14,7 +14,8 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 5px;
- background: linear-gradient(#f556e8, white);
+  background-image: url(../img/fundo_quiz.png);
+ /* background: linear-gradient(#f556e8, white); */
 }
 
 body h2 {
@@ -33,7 +34,6 @@ body h2 {
 }
 
 main {
-  box-shadow: 0px 0px 25px 10px rgba(211, 13, 194, 0.589);
   padding: 10px;
   border-radius: 10px;
   width: 100%;
@@ -43,8 +43,8 @@ main {
   align-items: center;
   background-color: white;
   justify-content: center;
+  margin-top: 136px;
 }
-
 .content {
   display: flex;
   flex-direction: column;

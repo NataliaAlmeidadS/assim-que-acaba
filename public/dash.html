@@ -15,7 +15,14 @@
       <div class="conteudo">
         <div class="grafico">
           <canvas id="myChart"></canvas>
+          <canvas id="myChart1"></canvas>
+          <canvas id="myChart2"></canvas>
+     
         </div>
+        <button  onclick="acertos()">aparecer qtd acertos</button>
+        <button  onclick="erros()">aparecer qtd erros </button>
+        
+        <button  onclick="comparar()">dois graficos </button>
       </div>
     </div>
   </div>
@@ -25,10 +32,27 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+
+  function comparar() {
+    myChart1.style.display='none'
+    myChart2.style.display='none'
+    myChart.style.display = 'block'
+  }
+  function erros() {
+    myChart1.style.display = 'none'
+    myChart.style.display = 'none'
+    myChart2.style.display='block'
+  }
+  function acertos() {
+    myChart2.style.display = 'none'
+    myChart1.style.display = 'block'
+    myChart.style.display = 'none'
+  }
+
+  var ValorResultado = [];
+  var tentativa = [];
+  var ValorErros = [];
   function mostrarGrafico() {
-    var ValorResultado = [];
-    var tentativa = [];
-    var ValorErros = [];
     var erros = [];
 
     fetch("http://localhost:3333/metricas/buscarMetrica")
@@ -48,6 +72,8 @@
           console.log(tentativa);
 
           const ctx = document.getElementById('myChart');
+          ctx.style.display = 'flex'
+
           new Chart(ctx, {
             type: 'bar',
             data: {
@@ -75,11 +101,64 @@
               }
             }
           });
+          
+        const ctx1 = document.getElementById('myChart1');
+        new Chart(ctx1, {
+          type: 'bar',
+          data: {
+            labels: tentativa,
+            datasets: [{
+              label: 'Quantidade de Acertos',
+              data: ValorResultado,
+              borderWidth: 1,
+              backgroundColor: 'green'
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 10
+              }
+            }
+          }
+        });
+ const ctx2 = document.getElementById('myChart2');
+        new Chart(ctx2, {
+          type: 'bar',
+          data: {
+            labels: tentativa,
+            datasets: [{
+              label: 'Quantidade de Erros',
+              data: ValorErros,
+              borderWidth: 1,
+              backgroundColor: 'red'
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 10
+              }
+            }
+          }
+          
         });
       })
+      
+      
       .catch(err => {
         console.error('Erro ao buscar métrica:', err);
       });
+
+
+        });
+       
+      
+       
+
+    comparar();
   }
 
   window.onload = mostrarGrafico; 

@@ -12,6 +12,7 @@ body {
   font-family: var(--body-font);
   background-color: var(--body-color);
   color: var(--text-color);
+  background-image: url(./img/gifpetalas.gif);
 }
 
 img {
@@ -46,11 +47,13 @@ img {
 
 .card_data {
   width: 280px;
-  background-color: #fff;
+  box-shadow: 5px 5px 15px 0px rgba(211, 13, 194, 0.589);
+  background: white;
   padding: 1.5rem 2rem;
-  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+ 
   border-radius: 1rem;
   position: absolute;
+  padding-top: -10px;
   bottom: -9rem;
   left: 0;
   right: 0;
@@ -67,9 +70,9 @@ img {
 
 .card_title {
   font-size: var(--h2-font-size);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--title-color);
-  margin-bottom: .75rem;
+ 
 }
 
 .card_button {
