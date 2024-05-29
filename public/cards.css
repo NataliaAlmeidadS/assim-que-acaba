@@ -149,6 +149,7 @@ img {
 
   .card_data {
     width: 250px;
+
     padding: 1rem;
   }
 }
@@ -174,7 +175,9 @@ img {
     width: 348px;
   }
   .card_data {
-    width: 316px;
+    width: 259px;
+    height: 81px;
+    margin-left: 19px;
     padding-inline: 2.5rem;
   }
 }

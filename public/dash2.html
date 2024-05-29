@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/dash2.css">
+</head>
+
+<body>
+  <div class="header">
+    <a href="#" class="logo"><img class="logo" src="Img/letra-n (1).png"> </a>
+    <div class="container">
+      <div class="conteudo">
+        <div class="grafico1">
+         <canvas id="myChart1"></canvas>
+          <div class="grafico2">
+
+              <canvas id="myChart2"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+ var ValorResultado = [];
+    var tentativa = [];
+    var ValorErros = [];
+    var erros = [];
+  function mostrarGrafico() {
+    fetch("http://localhost:3333/metricas/buscarMetrica")
+      .then(response => response.json())
+      .then(data => {
+        
+        const tentativa = data.tentativa;
+        const ValorResultado = data.ValorResultado;
+        const ValorErros = data.ValorErros;
+
+        const ctx1 = document.getElementById('myChart1');
+        new Chart(ctx1, {
+          type: 'bar',
+          data: {
+            labels: tentativa,
+            datasets: [{
+              label: 'Quantidade de Acertos',
+              data: ValorResultado,
+              borderWidth: 1,
+              backgroundColor: 'green'
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 10
+              }
+            }
+          }
+        });
+
+        const ctx2 = document.getElementById('myChart2');
+        new Chart(ctx2, {
+          type: 'bar',
+          data: {
+            labels: tentativa,
+            datasets: [{
+              label: 'Quantidade de Erros',
+              data: ValorErros,
+              borderWidth: 1,
+              backgroundColor: 'red'
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 10
+              }
+            }
+          }
+        });
+      })
+      .catch(err => {
+        console.error('Erro ao buscar métrica:', err);
+      });
+  }
+
+  window.onload = mostrarGrafico; 
+
+
+
+</script>

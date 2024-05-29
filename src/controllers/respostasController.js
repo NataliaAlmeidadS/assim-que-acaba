@@ -8,7 +8,7 @@ function cadastrar(req, res) {
     }
 
     respostasModel.cadastrar(acertos).then(function(resposta){
-        res.status(200).send("Carro criado com sucesso");
+        res.status(200).send("criado com sucesso");
     }).catch(function(erro){
         res.status(500).json(erro.sqlMessage);
     })
