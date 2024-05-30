@@ -12,7 +12,25 @@ body {
   font-family: var(--body-font);
   background-color: var(--body-color);
   color: var(--text-color);
-  background-image: url(./img/maisOp.png);
+  background-image: url(./img/opcoes.png);
+}
+
+.header {
+  grid-area: header;
+
+  position: fixed;
+  
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.logo {
+
+  height: 68px;
+  margin-left: 35px;
+  margin-top: 10px;
 }
 
 img {

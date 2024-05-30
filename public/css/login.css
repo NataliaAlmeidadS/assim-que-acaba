@@ -95,9 +95,10 @@ body{
  background-color: transparent;
  border: 1px solid #fff;
  background-color: #dd67ec;
- margin-left: 75px;
+ margin-left: 142px;
  height: 46px;
  width: 183px;
+ 
 }
 .btn-primary:hover{
     background-color: #fff;
@@ -109,7 +110,8 @@ body{
 .btn-segundo{
     background-color: transparent;
     border: 1px solid #fff;
-    margin-left: 75px;
+    margin-left: -48px;
+    
 }
 .btn-segundo:hover{
     background-color: #fff;
@@ -133,6 +135,7 @@ display: flex;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 76px;
 }
 
 

@@ -14,7 +14,8 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 5px;
-  background-image: url(../img/fundo_quiz.png);
+  background-image: url(../img/quiz.png);
+  
  /* background: linear-gradient(#f556e8, white); */
 }
 
@@ -31,6 +32,8 @@ body h2 {
 }
 .logo {
   max-width: 300px;
+  margin-left: 25px;
+  margin-top: 10px;
 }
 
 main {
