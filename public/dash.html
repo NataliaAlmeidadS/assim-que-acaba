@@ -9,22 +9,27 @@
 </head>
 
 <body>
-  <div class="header">
-    <a href="#" class="logo"><img class="logo" src="Img/letra-n (1).png"> </a>
-    <div class="container">
-      <div class="conteudo">
-        <div class="grafico">
-          <canvas id="myChart"></canvas>
-          <canvas id="myChart1"></canvas>
-          <canvas id="myChart2"></canvas>
-     
-        </div>
-        <button  onclick="acertos()">aparecer qtd acertos</button>
-        <button  onclick="erros()">aparecer qtd erros </button>
-        
-        <button  onclick="comparar()">dois graficos </button>
-      </div>
+  <header class="header">
+
+    <a href="./index_2.html" class="logo"><img class="logo" src="Img/anterior.png"> </a>
+  </header>
+  <div class="container">
+    <div class="button">
+      <button onclick="acertos()">ACERTOS</button>
+      <button onclick="erros()">ERROS </button>
+      <button onclick="comparar()">AMBOS </button>
     </div>
+
+    <div class="conteudo">
+      <div class="grafico">
+        <canvas id="myChart"></canvas>
+        <canvas id="myChart1"></canvas>
+        <canvas id="myChart2"></canvas>
+
+      </div>
+
+    </div>
+  </div>
   </div>
 </body>
 
@@ -34,14 +39,14 @@
 <script>
 
   function comparar() {
-    myChart1.style.display='none'
-    myChart2.style.display='none'
+    myChart1.style.display = 'none'
+    myChart2.style.display = 'none'
     myChart.style.display = 'block'
   }
   function erros() {
     myChart1.style.display = 'none'
     myChart.style.display = 'none'
-    myChart2.style.display='block'
+    myChart2.style.display = 'block'
   }
   function acertos() {
     myChart2.style.display = 'none'
@@ -62,7 +67,7 @@
           for (var i = 0; i < response.length; i++) {
             ValorResultado.push(response[i].qntdAcertos);
             tentativa.push(`Tentativa ${i + 1}`);
-            ValorErros.push(response[i].qntdErros); 
+            ValorErros.push(response[i].qntdErros);
             erros.push(`Tentativa ${i + 1}`);
           }
 
@@ -79,17 +84,17 @@
             data: {
               labels: tentativa,
               datasets: [{
-                  label: 'Quantidade de Acertos',
-                  data: ValorResultado,
-                  borderWidth: 1,
-                  backgroundColor: ['green']
-                },
-                {
-                  label: 'Quantidade de Erros',
-                  data: ValorErros,
-                  borderWidth: 1,
-                  backgroundColor: ['red']
-                }
+                label: 'Quantidade de Acertos',
+                data: ValorResultado,
+                borderWidth: 1,
+                backgroundColor: ['#b26dbd']
+              },
+              {
+                label: 'Quantidade de Erros',
+                data: ValorErros,
+                borderWidth: 1,
+                backgroundColor: ['#142886']
+              }
               ]
             },
             options: {
@@ -101,66 +106,67 @@
               }
             }
           });
-          
-        const ctx1 = document.getElementById('myChart1');
-        new Chart(ctx1, {
-          type: 'bar',
-          data: {
-            labels: tentativa,
-            datasets: [{
-              label: 'Quantidade de Acertos',
-              data: ValorResultado,
-              borderWidth: 1,
-              backgroundColor: 'green'
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true,
-                max: 10
+
+          const ctx1 = document.getElementById('myChart1');
+          new Chart(ctx1, {
+            type: 'bar',
+            data: {
+              labels: tentativa,
+              datasets: [{
+                label: 'Quantidade de Acertos',
+                data: ValorResultado,
+                borderWidth: 1,
+                backgroundColor: '#b26dbd'
+              
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  max: 10
+                }
               }
             }
-          }
-        });
- const ctx2 = document.getElementById('myChart2');
-        new Chart(ctx2, {
-          type: 'bar',
-          data: {
-            labels: tentativa,
-            datasets: [{
-              label: 'Quantidade de Erros',
-              data: ValorErros,
-              borderWidth: 1,
-              backgroundColor: 'red'
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true,
-                max: 10
+          });
+          const ctx2 = document.getElementById('myChart2');
+          new Chart(ctx2, {
+            type: 'bar',
+            data: {
+              labels: tentativa,
+              datasets: [{
+                label: 'Quantidade de Erros',
+                data: ValorErros,
+                borderWidth: 1,
+                backgroundColor: '#142886'
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  max: 10
+                }
               }
             }
-          }
-          
-        });
-      })
-      
-      
-      .catch(err => {
-        console.error('Erro ao buscar métrica:', err);
+
+          });
+        })
+
+
+          .catch(err => {
+            console.error('Erro ao buscar métrica:', err);
+          });
+
+
       });
 
 
-        });
-       
-      
-       
+
 
     comparar();
   }
 
-  window.onload = mostrarGrafico; 
+  window.onload = mostrarGrafico;
 
 </script>
