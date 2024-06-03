@@ -1,19 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="chat.css">
 </head>
+
 <body>
-    Insira seu nome: <input type="text" id="input_nome">
-    Insira sua mensagem: <input type="text" id="input_mensagem">
-    <button onclick="enviar()">Enviar</button>
+    <header>
+        <div id="usuario"></div>
+    </header>
+    <div class="container">
+        <div class="quadrado">
+            <div id="Texto"></div>
+            <div class="conteudo">
+                Deixe sua opnião sobre o livro: <input type="text" id="input_mensagem">
+                <button onclick="enviar()">Enviar</button>
+            </div>
+           
+        </div>
+
+     
+    </div>
 </body>
+
 </html>
 <script>
-    function enviar(){
-        var nome = input_nome.value;
+    var nome = sessionStorage.NOME_USUARIO;
+    var nome1 = nome.replace(/"/g, "");
+     usuario.innerHTML = nome1
+    var lista_comentarios = [];
+    function enviar() {
         var mensagem = input_mensagem.value;
+        Texto.innerHTML = "";
+
+            fetch("/post/registrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nome,
+                    mensagemServer: mensagem
+                }),
+            })
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+                        lista_comentarios.push(mensagem);
+
+                        for (var index = lista_comentarios.length - 1; index >= 0; index--) {
+                            Texto.innerHTML += `${nome1}: ${lista_comentarios[index]}<br>`
+                        }
+
+                        limparFormulario();
+                    } else {
+                        throw "Houve um erro";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                });
+
     }
 </script>

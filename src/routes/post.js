@@ -1,13 +1,13 @@
-var postontroller = require("../controllers/postController");
 
-function post(idPost, mensagem) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", idPost, mensagem);
-    
-    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-    //  e na ordem de inserção dos dados.
-    var instrucaoSql = `
-        SELECT post (idPost, mensagem) VALUES ('${idPost}', '${mensagem}');
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
-}
+module.exports = router;
+var express = require("express");
+var router = express.Router();
+
+var postController = require("../controllers/postController");
+
+router.post("/registrar", function (req, res) {
+    // função a ser chamada quando acessar /carros/cadastrar
+    postController.registrar(req, res);
+});
+
+module.exports = router;

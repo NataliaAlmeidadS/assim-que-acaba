@@ -21,9 +21,9 @@
       <div class="container">
         <div class="content first-content">
           <div class="first-column">
-            <h2 class="title-primeiro"> Bem vindo de volta!</h2>
-            <p class="descripition descripition-primary">Muito bom te-ló conectado conosco</p>
-            <p class="descripition descripition-primary">Por favor logue com sua informações pessoais</p>
+            <h2 class="title-primeiro"> Bem-vindo de volta!</h2>
+            <p class="descripition descripition-primary">Muito bom tê-lo conectado conosco</p>
+            <p class="descripition descripition-primary">Por favor entre com sua informações pessoais</p>
             <a href="login.html">
               <p class="btn btn-primary">Entrar</p>
             </a>
@@ -97,14 +97,14 @@
         } else {
 
             if (telefoneVar.length < 11 || telefoneVar.length > 11) {
-                telefone.innerHTML = "Necessario 11 digitos."
+                telefone.innerHTML += "Necessario 11 digitos."
             } else {
                 if (indicearroba == -1) {
-                    email.innerHTML = "O email precisa conter @"
+                    email.innerHTML += "O email precisa conter @"
                 }
                 else {
                     if (senhaVar.length < 8 && indicesenha == -1) {
-                        senha.innerHTML = "A senha precisa ter 8 ou mais digitos e caracter especial"
+                        senha.innerHTML += "A senha precisa ter 8 ou mais digitos e caracter especial"
                     }
                     else {
                         fetch("/usuarios/cadastrar", {
