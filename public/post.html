@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <div id="usuario"></div>
+        <a href="./index_2.html" class="logo"><img class="logo" src="Img/anterior.png"> </a>
     </header>
     <div class="container">
         <div class="quadrado">
@@ -30,9 +30,11 @@
 <script>
     var nome = sessionStorage.NOME_USUARIO;
     var nome1 = nome.replace(/"/g, "");
-     usuario.innerHTML = nome1
-    var lista_comentarios = [];
+    var lista_comentarios = ['<br><br>Maria aparecida: A narrativa habilmente entrelaça os destinos dos personagens, criando uma teia de eventos que mantém o leitor ansioso por mais a cada página. A profundidade psicológica dos protagonistas adiciona camadas de complexidade à trama, tornando-a ainda mais cativante. Além disso, a forma como o autor aborda temas como perda, superação e redenção traz uma reflexão valiosa sobre a natureza humana. No geral, é um livro emocionante e instigante que prende a atenção do leitor até o final.<br><br>'];
+    Texto.innerHTML += `${lista_comentarios[0]}`;
+
     function enviar() {
+        console.log(lista_comentarios);
         var mensagem = input_mensagem.value;
         Texto.innerHTML = "";
 

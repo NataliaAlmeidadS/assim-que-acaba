@@ -3,6 +3,9 @@
     padding: 0;
 }
 
+html{
+    overflow-y: hidden;
+}
 body{
     width: 100vw;
     height: 100vh;
@@ -22,7 +25,6 @@ body{
     height: 80%;
     background-color: transparent;
     backdrop-filter: blur(19.5px);
-    text-align: center;
     margin-top: 40px;
     margin-left: 100px;
     border-radius: 5px;
@@ -61,4 +63,8 @@ margin-bottom: 300px;
 }
 header{
     background: transparent;
+}
+
+#input_mensagem{
+    margin-left: -15px;
 }
